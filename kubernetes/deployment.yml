@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hk-django
+  labels:
+    app: django-hardeep
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: django-hardeep
+  template:
+    metadata:
+      labels:
+        app: django-hardeep
+    spec:
+      containers:
+      - name: hk-container
+        image: hardeep-django:1.2
+        ports:
+        - containerPort: 8000
