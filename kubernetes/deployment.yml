@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hk-container
-        image: hardeep-django:1.2
+        image: hk-new-django:3.0
         ports:
         - containerPort: 8000

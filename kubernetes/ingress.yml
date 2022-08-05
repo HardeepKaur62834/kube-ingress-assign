@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hk-ingress
+  namespace: ingress-nginx
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: hardeep.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hk-service
+            port:
+              number: 80
